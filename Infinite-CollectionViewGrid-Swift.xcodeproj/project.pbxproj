@@ -13,6 +13,9 @@
 		78B78963212BD0DB00376761 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78B78962212BD0DB00376761 /* Assets.xcassets */; };
 		78B78966212BD0DB00376761 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78B78964212BD0DB00376761 /* LaunchScreen.storyboard */; };
 		78B7896E212BD31100376761 /* InfiniteGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B7896D212BD31100376761 /* InfiniteGrid.swift */; };
+		78B78970212BD3C500376761 /* GridCoordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B7896F212BD3C500376761 /* GridCoordinates.swift */; };
+		78B78972212BD3E400376761 /* InfiniteGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B78971212BD3E400376761 /* InfiniteGridCell.swift */; };
+		78B78974212BD41900376761 /* InfiniteGridDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B78973212BD41900376761 /* InfiniteGridDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		78B78965212BD0DB00376761 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		78B78967212BD0DB00376761 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78B7896D212BD31100376761 /* InfiniteGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteGrid.swift; sourceTree = "<group>"; };
+		78B7896F212BD3C500376761 /* GridCoordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCoordinates.swift; sourceTree = "<group>"; };
+		78B78971212BD3E400376761 /* InfiniteGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteGridCell.swift; sourceTree = "<group>"; };
+		78B78973212BD41900376761 /* InfiniteGridDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteGridDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +64,10 @@
 			children = (
 				78B7895B212BD0DA00376761 /* AppDelegate.swift */,
 				78B7895D212BD0DA00376761 /* ViewController.swift */,
+				78B7896F212BD3C500376761 /* GridCoordinates.swift */,
 				78B7896D212BD31100376761 /* InfiniteGrid.swift */,
+				78B78971212BD3E400376761 /* InfiniteGridCell.swift */,
+				78B78973212BD41900376761 /* InfiniteGridDataSource.swift */,
 				78B7895F212BD0DA00376761 /* Main.storyboard */,
 				78B78962212BD0DB00376761 /* Assets.xcassets */,
 				78B78964212BD0DB00376761 /* LaunchScreen.storyboard */,
@@ -139,8 +148,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				78B7896E212BD31100376761 /* InfiniteGrid.swift in Sources */,
+				78B78970212BD3C500376761 /* GridCoordinates.swift in Sources */,
+				78B78974212BD41900376761 /* InfiniteGridDataSource.swift in Sources */,
 				78B7895E212BD0DA00376761 /* ViewController.swift in Sources */,
 				78B7895C212BD0DA00376761 /* AppDelegate.swift in Sources */,
+				78B78972212BD3E400376761 /* InfiniteGridCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

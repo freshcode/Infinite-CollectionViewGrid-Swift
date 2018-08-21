@@ -12,11 +12,17 @@
 import UIKit
 class InfiniteGrid: UICollectionView {
 
+    let infiniteDataSource = InfiniteGridDataSource()
+
     convenience init(hostView: UIView) {
         self.init(frame: hostView.bounds, collectionViewLayout: UICollectionViewFlowLayout())
         self.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.translatesAutoresizingMaskIntoConstraints = true
         self.backgroundColor = UIColor.clear
+
+        self.dataSource = infiniteDataSource
+        InfiniteGridCell.register(with: self)
+
         hostView.addSubview(self)
     }
 }
