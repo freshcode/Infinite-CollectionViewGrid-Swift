@@ -13,6 +13,7 @@ import UIKit
 class InfiniteGrid: UICollectionView {
 
     let infiniteDataSource = InfiniteGridDataSource()
+    let infiniteDelegate = InfiniteGridDelegate()
     var centerCoordinates = GridCoordinates(x: 0, y: 0) {
         didSet { self.reloadData() }
     }
@@ -22,9 +23,12 @@ class InfiniteGrid: UICollectionView {
         self.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.translatesAutoresizingMaskIntoConstraints = true
         self.backgroundColor = UIColor.clear
-
         self.dataSource = infiniteDataSource
         InfiniteGridCell.register(with: self)
+
+        self.delegate = infiniteDelegate
+        infiniteDelegate.grid = self
+        infiniteDelegate.layout = self.collectionViewLayout as? InfiniteGridLayout
 
         hostView.addSubview(self)
     }

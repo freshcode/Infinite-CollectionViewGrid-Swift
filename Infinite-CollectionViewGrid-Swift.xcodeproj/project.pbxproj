@@ -17,6 +17,7 @@
 		78B78972212BD3E400376761 /* InfiniteGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B78971212BD3E400376761 /* InfiniteGridCell.swift */; };
 		78B78974212BD41900376761 /* InfiniteGridDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B78973212BD41900376761 /* InfiniteGridDataSource.swift */; };
 		78B78976212BD47E00376761 /* InfiniteGridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B78975212BD47E00376761 /* InfiniteGridLayout.swift */; };
+		78B78978212BD5B600376761 /* InfiniteGridDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B78977212BD5B600376761 /* InfiniteGridDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		78B78971212BD3E400376761 /* InfiniteGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteGridCell.swift; sourceTree = "<group>"; };
 		78B78973212BD41900376761 /* InfiniteGridDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteGridDataSource.swift; sourceTree = "<group>"; };
 		78B78975212BD47E00376761 /* InfiniteGridLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteGridLayout.swift; sourceTree = "<group>"; };
+		78B78977212BD5B600376761 /* InfiniteGridDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteGridDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				78B7896D212BD31100376761 /* InfiniteGrid.swift */,
 				78B78971212BD3E400376761 /* InfiniteGridCell.swift */,
 				78B78973212BD41900376761 /* InfiniteGridDataSource.swift */,
+				78B78977212BD5B600376761 /* InfiniteGridDelegate.swift */,
 				78B78975212BD47E00376761 /* InfiniteGridLayout.swift */,
 				78B7895F212BD0DA00376761 /* Main.storyboard */,
 				78B78962212BD0DB00376761 /* Assets.xcassets */,
@@ -154,6 +157,7 @@
 				78B7896E212BD31100376761 /* InfiniteGrid.swift in Sources */,
 				78B78970212BD3C500376761 /* GridCoordinates.swift in Sources */,
 				78B78974212BD41900376761 /* InfiniteGridDataSource.swift in Sources */,
+				78B78978212BD5B600376761 /* InfiniteGridDelegate.swift in Sources */,
 				78B7895E212BD0DA00376761 /* ViewController.swift in Sources */,
 				78B7895C212BD0DA00376761 /* AppDelegate.swift in Sources */,
 				78B78972212BD3E400376761 /* InfiniteGridCell.swift in Sources */,
