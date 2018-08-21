@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  InfiniteGrid.swift
 //  Infinite-CollectionViewGrid-Swift
 //
 //  Created by Dave Poirier for ID Fusion Software Inc on 2018-08-20.
@@ -10,14 +10,13 @@
 //  Distributed under the MIT License: https://opensource.org/licenses/MIT
 
 import UIKit
+class InfiniteGrid: UICollectionView {
 
-class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-
-        _ = InfiniteGrid(hostView: self.view)
+    convenience init(hostView: UIView) {
+        self.init(frame: hostView.bounds, collectionViewLayout: UICollectionViewFlowLayout())
+        self.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.translatesAutoresizingMaskIntoConstraints = true
+        self.backgroundColor = UIColor.clear
+        hostView.addSubview(self)
     }
 }
-
