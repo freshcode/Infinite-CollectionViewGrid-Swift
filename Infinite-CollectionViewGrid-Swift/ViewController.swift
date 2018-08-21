@@ -10,14 +10,19 @@
 //  Distributed under the MIT License: https://opensource.org/licenses/MIT
 
 import UIKit
-
 class ViewController: UIViewController {
+
+    var infiniteGrid: InfiniteGrid?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.infiniteGrid = InfiniteGrid(hostView: self.view)
+    }
 
-        _ = InfiniteGrid(hostView: self.view)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        infiniteGrid?.scrollToCenter()
     }
 }
-

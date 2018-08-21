@@ -15,14 +15,21 @@ class InfiniteGrid: UICollectionView {
     let infiniteDataSource = InfiniteGridDataSource()
 
     convenience init(hostView: UIView) {
-        self.init(frame: hostView.bounds, collectionViewLayout: UICollectionViewFlowLayout())
+
+        self.init(frame: hostView.bounds, collectionViewLayout: InfiniteGridLayout())
+
         self.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.translatesAutoresizingMaskIntoConstraints = true
         self.backgroundColor = UIColor.clear
-
         self.dataSource = infiniteDataSource
         InfiniteGridCell.register(with: self)
-
         hostView.addSubview(self)
+    }
+
+    func scrollToCenter() {
+        let size = self.contentSize
+        let topLeftCoordinatesWhenCentered = CGPoint(x: (size.width - self.frame.width) * 0.5,
+                                                     y: (size.height - self.frame.height) * 0.5)
+        self.setContentOffset(topLeftCoordinatesWhenCentered, animated: false)
     }
 }
