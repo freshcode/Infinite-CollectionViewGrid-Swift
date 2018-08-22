@@ -31,27 +31,25 @@ class InfiniteGridDelegate: NSObject, UIScrollViewDelegate, UICollectionViewDele
     }
 
     private func readjustOffsets() {
+        guard let layout = self.layout else { return }
+
+        let displacement = layout.gridCenterDisplacement()
+        let (horizontalTiles, verticalTiles) = layout.roundToTiles(distance: displacement, rounding: .towardZero)
+        adjustContentOffsetBy(horizontalTiles, verticalTiles)
+    }
+
+    private func adjustContentOffsetBy(_ horizontalTiles: CGFloat, _ verticalTiles: CGFloat) {
         guard
-            let gridLayout = self.layout,
+            let tileSize = self.layout?.tileSize,
             let grid = self.grid,
-            gridLayout.tileSize.width > 0,
-            gridLayout.tileSize.height > 0
+            horizontalTiles != 0 || verticalTiles != 0
             else { return }
 
-        let centreOffset = CGPoint(x: (gridLayout.gridSize.width - grid.frame.size.width) * 0.5,
-                                   y: (gridLayout.gridSize.height - grid.frame.size.height) * 0.5)
-        let currentOffset = grid.contentOffset
-
-        let offsetX = currentOffset.x - centreOffset.x
-        let offsetY = currentOffset.y - centreOffset.y
-        let fullTileOffsetX = (offsetX / gridLayout.tileSize.width).rounded(.towardZero)
-        let fullTileOffsetY = (offsetY / gridLayout.tileSize.height).rounded(.towardZero)
-        if fullTileOffsetY != 0 || fullTileOffsetX != 0 {
-            let updatedOffset = CGPoint(x: currentOffset.x - (fullTileOffsetX * gridLayout.tileSize.width),
-                                        y: currentOffset.y - (fullTileOffsetY * gridLayout.tileSize.height))
-            grid.setContentOffset(updatedOffset, animated: false)
-            grid.centerCoordinates = GridCoordinates(x: grid.centerCoordinates.x + Int(fullTileOffsetX), y: grid.centerCoordinates.y + Int(fullTileOffsetY))
-            // reloadData() performed by didSet of centerCoordinates
-        }
+        let updatedOffset = CGPoint(x: grid.contentOffset.x - (horizontalTiles * tileSize.width),
+                                    y: grid.contentOffset.y - (verticalTiles * tileSize.height))
+        grid.setContentOffset(updatedOffset, animated: false)
+        grid.centerCoordinates = GridCoordinates(x: grid.centerCoordinates.x + Int(horizontalTiles),
+                                                 y: grid.centerCoordinates.y + Int(verticalTiles))
+        // reloadData() performed by didSet of centerCoordinates
     }
 }

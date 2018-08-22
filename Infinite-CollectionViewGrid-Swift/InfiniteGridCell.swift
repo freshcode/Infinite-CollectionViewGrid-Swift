@@ -21,26 +21,33 @@ class InfiniteGridCell: UICollectionViewCell {
         collectionView.register(self, forCellWithReuseIdentifier: identifier)
     }
 
-    static func dequeue(from collectionView: UICollectionView, at indexPath: IndexPath,
-                        for coordinates: GridCoordinates) -> InfiniteGridCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as? InfiniteGridCell ?? InfiniteGridCell()
-        cell.coordinates = coordinates
-        return cell
+    static func dequeue(from collectionView: UICollectionView,
+                        at indexPath: IndexPath,
+                        for coordinates: GridCoordinates)
+        -> InfiniteGridCell {
+
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)
+                as? InfiniteGridCell ?? InfiniteGridCell()
+            cell.coordinates = coordinates
+            return cell
     }
 
-    private func coordinatesLabel() -> UILabel {
-        if let label = self.contentView.subviews.first as? UILabel {
+    private func coordinatesLabel()
+        -> UILabel {
+
+            if let label = self.contentView.subviews.first as? UILabel {
+                return label
+            }
+
+            let label = UILabel(frame: self.contentView.bounds)
+            label.font = UIFont.systemFont(ofSize: 24.0)
+            label.textColor = UIColor.darkGray
+            label.textAlignment = .center
+            label.minimumScaleFactor = 0.5
+            label.adjustsFontSizeToFitWidth = true
+            label.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+            label.translatesAutoresizingMaskIntoConstraints = true
+            self.contentView.addSubview(label)
             return label
-        }
-        let label = UILabel(frame: self.contentView.bounds)
-        label.font = UIFont.systemFont(ofSize: 24.0)
-        label.textColor = UIColor.darkGray
-        label.textAlignment = .center
-        label.minimumScaleFactor = 0.5
-        label.adjustsFontSizeToFitWidth = true
-        label.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        label.translatesAutoresizingMaskIntoConstraints = true
-        self.contentView.addSubview(label)
-        return label
     }
 }
